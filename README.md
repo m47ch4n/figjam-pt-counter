@@ -1,3 +1,13 @@
+# \[pt\] counter
+Sums the bracketed numbers in the stickies text
+
+## How to use
+1. Select a stickies
+1. Run the plugin
+1. You can get the sum of the numbers
+
+
+## Development
 Below are the steps to get your plugin running. You can also find instructions at:
 
   https://www.figma.com/plugin-docs/setup/
