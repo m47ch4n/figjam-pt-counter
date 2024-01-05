@@ -2,8 +2,8 @@
 Sums the bracketed numbers in the stickies text
 
 ## How to use
-1. Select a stickies
-1. Run the plugin
+1. Select stickies
+1. Find this plugin and run
 1. You can get the sum of the numbers
 
 
