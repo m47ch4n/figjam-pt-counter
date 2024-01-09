@@ -1,10 +1,13 @@
 const re = /\[(\d+\.?\d*|\.\d+) ?(pt)?\]/g 
 
-function findAllSticky(node: SceneNode): StickyNode[] {
+type Countable = StickyNode | ShapeWithTextNode
+
+function findAllCountable(node: SceneNode): Countable[] {
   switch (node.type) {
     case "GROUP":
     case "SECTION":
-      return node.findAll(n => n.type === "STICKY") as StickyNode[]
+      return node.findAll(n => n.type === "STICKY" || n.type === "SHAPE_WITH_TEXT") as Countable[]
+    case "SHAPE_WITH_TEXT":
     case "STICKY":
       return [node]
     default:
@@ -13,9 +16,9 @@ function findAllSticky(node: SceneNode): StickyNode[] {
 }
 
 const count = figma.currentPage.selection.reduce((acc, node) => {
-  const stickies = findAllSticky(node)
-  for (const sticky of stickies)
-    for (const match of sticky.text.characters.matchAll(re))
+  const countables = findAllCountable(node)
+  for (const countable of countables)
+    for (const match of countable.text.characters.matchAll(re))
       acc += parseFloat(match[1])
   return acc
 }, 0)

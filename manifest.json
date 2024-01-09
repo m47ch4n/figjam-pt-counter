@@ -1,8 +1,9 @@
 {
   "name": "[pt] counter",
-  "id": "1202259714991378608",
+  "id": "1202569048388892302",
   "api": "1.0.0",
   "main": "code.js",
+  "networkAccess": { "allowedDomains": ["none"] },
   "editorType": [
     "figjam"
   ]
